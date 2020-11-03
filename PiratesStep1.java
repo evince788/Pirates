@@ -86,6 +86,8 @@ public class PiratesStep1 {
 		shipImage.setSize(new Dimension(40, 40));
 		gamePanel.add(shipImage, Integer.valueOf(1));
 		
+		Random randomGenerator = new Random();
+		shipImage.setLocation(randomGenerator.nextInt(735), randomGenerator.nextInt(360));
 		contentPane.add(gamePanel);
 		
 		
