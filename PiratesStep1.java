@@ -40,8 +40,57 @@ public class PiratesStep1 {
 
 		// The panel that will hold the components in the frame.
 		JPanel contentPane = new JPanel ();
+		contentPane.setPreferredSize(new Dimension(775, 450));
+		contentPane.setLayout(new BorderLayout());
 
-		// TODO: Add the components to the view
+		// Create the right action panel
+		JPanel rightPanel = new JPanel();
+		
+		contentPane.add(rightPanel, BorderLayout.EAST);
+		
+		rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.PAGE_AXIS));
+		
+		JLabel scoreTitleLabel = new JLabel("Score");
+		scoreTitleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+		rightPanel.add(scoreTitleLabel);
+		
+		
+		JLabel scoreLabel = new JLabel("0");
+		scoreLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+		rightPanel.add(scoreLabel);
+		
+		
+		JLabel actionsTitleLabel = new JLabel("Actions");
+		actionsTitleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+		rightPanel.add(actionsTitleLabel);
+		
+		JButton newGameButton = new JButton("New Game");
+		newGameButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+		rightPanel.add(newGameButton);
+		
+		JButton musicToggleButton = new JButton("Music Off");
+		musicToggleButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+		rightPanel.add(musicToggleButton);
+		
+		JButton exitGameButton = new JButton("Exit Game");
+		exitGameButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+		rightPanel.add(exitGameButton);
+		
+		JLayeredPane gamePanel = new JLayeredPane();
+		
+		JLabel mapImage = new JLabel(new ImageIcon("resources/world-map-animals.jpg"));
+		mapImage.setSize(new Dimension(775, 400));
+		gamePanel.add(mapImage);
+		
+		JLabel shipImage = createScaledImage("resources/pirate-ship.png", 40, 40);
+		shipImage.setSize(new Dimension(40, 40));
+		gamePanel.add(shipImage, Integer.valueOf(1));
+		
+		contentPane.add(gamePanel);
+		
+		
+		
+		
 		
 
 		// Add the panel to the frame
